@@ -7,7 +7,6 @@ import { schoolLogoAPI } from "../APIs/APIs"
 function getBaseURL(url){
   var parts = url.split("www.")
   var latterPart = parts[parts.length - 1]
-  console.log(latterPart)
   return latterPart.split("/")[0]
 }
 
