@@ -1,6 +1,6 @@
 # College-Cost-And-Earning Project Summary
 
-Project Demo: [haoyan.info](https://haoyan.info)
+Project Demo: [haoyan.info](http://haoyan.info)
 
 
 ### Introduction
