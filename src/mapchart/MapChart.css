@@ -1,0 +1,8 @@
+.state-geo {
+    stroke: #FFF(63, 159, 232);
+    fill: rgb(202, 207, 211);
+}
+
+.state-geo:hover {
+    fill: grey;
+}

@@ -1,0 +1,21 @@
+.main {
+    min-height: 100vh;
+    background: linear-gradient(to right, rgb(196, 224, 233), rgb(190, 247, 249));
+}
+
+.btn-link {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.btn-link:focus {
+    outline: none !important;
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.header {
+    background-color: black;
+}
