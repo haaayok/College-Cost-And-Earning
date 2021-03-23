@@ -46,6 +46,7 @@ function Homepage() {
                 variant="link"
                 className="button-link"
                 style={{display: "block"}}
+                disabled={loading}
 
                 onClick={() => {
                   changeContent(content === "cost"? "earning":"cost")
