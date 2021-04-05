@@ -27,7 +27,7 @@ function Homepage() {
             marginRight: 25
           }}
         />
-        College Earnings and Costs
+        College Costs and Earnings
         </Navbar.Brand>
       </Navbar>
 
