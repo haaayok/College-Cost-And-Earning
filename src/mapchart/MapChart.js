@@ -58,7 +58,6 @@ function fetchSchoolData(params) {
 
             resList.map((res) => {
               res.data.results.map((schoolData) => {
-                console.log(schoolData);
                 if (schoolData[variableField] != null) {
                 if (highestDataPoints.length < 9){
                   highestDataPoints.push(schoolData)
