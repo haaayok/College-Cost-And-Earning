@@ -54,35 +54,44 @@ function fetchSchoolData(params) {
         Promise.all(promiseList)
           .then((resList) => {
             
-            //var highestDataPoints = new Array(10).fill(null)
-            var dataList = []
+            var highestDataPoints = []
 
             resList.map((res) => {
               res.data.results.map((schoolData) => {
-                dataList.push(schoolData)
-                /*
-                for(let j = 0; j < 10; j++){
-                  if (highestDataPoints[j] == null ||
-                      schoolData[variableField] > highestDataPoints[j][variableField]){
-                    highestDataPoints[j] = schoolData
-                    break
-                  }
+                console.log(schoolData);
+                if (schoolData[variableField] != null) {
+                if (highestDataPoints.length < 9){
+                  highestDataPoints.push(schoolData)
                 }
-                */
+                else if (highestDataPoints.length === 9){
+                  highestDataPoints.push(schoolData)
+                  highestDataPoints.sort(function(dataObj1, dataObj2){
+                    if(dataObj1[variableField] < dataObj2[variableField])
+                      return 1
+                    if(dataObj1[variableField] > dataObj2[variableField])
+                      return -1
+                    return 0
+                  })
+                }
+                else {
+                  for(let j = 0; j < 10; j++){
+                    if ( schoolData[variableField] > highestDataPoints[j][variableField]){
+                      highestDataPoints.splice(j, 0, schoolData)
+                      break
+                    }
+                  }
+                  if (highestDataPoints.length > 10) // an element is inserted
+                    highestDataPoints.pop();
+                }
+              }
               })
 
             })
 
-            dataList.sort(function(dataObj1, dataObj2){
-              if(dataObj1[variableField] < dataObj2[variableField])
-                return 1
-              if(dataObj1[variableField] > dataObj2[variableField])
-                return -1
-              return 0
-            })
+            
             
 
-            params.updateDataList(dataList.slice(0, 10))
+            params.updateDataList(highestDataPoints)
             params.toggleLoading(false)
 
             }
