@@ -30,10 +30,11 @@ const offsets = {
   DC: [49, 21],
 };
 
-
+var currentState = "";
 
 
 function fetchSchoolData(params) {
+    currentState = params.usaState;
     var queryString=`&school.state=${params.usaState}&fields=school.name,school.school_url,`
     
     var variableField = params.content === "cost"? 
@@ -89,9 +90,10 @@ function fetchSchoolData(params) {
 
             
             
-
-            params.updateDataList(highestDataPoints)
-            params.toggleLoading(false)
+            if (params.usaState === currentState){
+              params.updateDataList(highestDataPoints)
+              params.toggleLoading(false)
+            }
 
             }
 
