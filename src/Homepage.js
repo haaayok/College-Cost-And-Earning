@@ -1,7 +1,8 @@
 import MapChart from "./mapchart/MapChart";
 import DataPage from "./datapage/DataPage";
-import { Container, Row, Col, Navbar, Button } from "react-bootstrap";
+import { Container, Row, Col, Navbar, Button, Nav } from "react-bootstrap";
 import  logo from "./logo.png";
+import githubLogo from "./githubLogo.png";
 import {useState} from 'react';
 import "./Homepage.css";
 
@@ -19,7 +20,7 @@ function Homepage() {
         <Navbar.Brand href="#home">
         <img
           alt="logo"
-          src= {logo}
+          src={logo}
           width="30"
           height="30"
           style={{
@@ -29,6 +30,22 @@ function Homepage() {
         />
         College Costs and Earnings
         </Navbar.Brand>
+        <Nav>
+          <Nav.Link
+            style={{
+              padding: 0,
+              marginLeft: 10 
+            }}
+            href="https://github.com/yanok9812/College-Cost-And-Earning"
+          >
+            <img
+              src={ githubLogo } 
+              alt="github logo"
+              width="35"
+              height="35"
+            />
+          </Nav.Link>
+          </Nav>
       </Navbar>
 
       <Container>
