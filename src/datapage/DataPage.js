@@ -55,8 +55,6 @@ function DataPage(props){
 
           <tbody>
             {props.dataList.map( (schoolData) => {
-              console.log(schoolData["school.school_url"]);
-              console.log(getRootDomain(schoolData["school.school_url"]));
               return (
                 <tr key={i}>
                   <td> {++i} </td>
