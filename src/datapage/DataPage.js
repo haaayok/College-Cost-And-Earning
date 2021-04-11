@@ -4,10 +4,19 @@ import loading from "./loading.gif"
 import { schoolLogoAPI } from "../APIs/APIs"
 
 
-function getBaseURL(url){
-  var parts = url.split("www.")
-  var latterPart = parts[parts.length - 1]
-  return latterPart.split("/")[0]
+function getRootDomain(url){
+  var path = ""
+  if (url.includes("www.")) {
+    var parts = url.split("www.")
+    path = parts[parts.length - 1]
+  }
+  else {
+    path = url;
+    if(path.substring(0, 4) === "http")
+      path = path.split("//")[1]
+  }
+
+  return path.split("/")[0]
 }
 
 function DataPage(props){
@@ -46,6 +55,8 @@ function DataPage(props){
 
           <tbody>
             {props.dataList.map( (schoolData) => {
+              console.log(schoolData["school.school_url"]);
+              console.log(getRootDomain(schoolData["school.school_url"]));
               return (
                 <tr key={i}>
                   <td> {++i} </td>
@@ -55,7 +66,7 @@ function DataPage(props){
                         <img
                           width = "30"
                           height = "30"
-                          src={schoolLogoAPI+getBaseURL(schoolData["school.school_url"])}
+                          src={schoolLogoAPI+getRootDomain(schoolData["school.school_url"])}
                           alt=""
                         />
                       </Col>
