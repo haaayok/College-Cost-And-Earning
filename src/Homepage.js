@@ -50,7 +50,7 @@ function Homepage() {
 
       <Container>
         <Row>
-          <Col>
+          <Col sm="6">
             <span> 
               Click on a state to see the 10 schools in that state with the
               {content === "cost"? 
