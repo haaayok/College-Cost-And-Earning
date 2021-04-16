@@ -37,6 +37,8 @@ function Homepage() {
               marginLeft: 10 
             }}
             href="https://github.com/yanok9812/College-Cost-And-Earning"
+            target="_blank"
+            rel="noreferrer"
           >
             <img
               src={ githubLogo } 
