@@ -10,7 +10,7 @@ This application lets you find the 10 universities in every state that have the 
 This application uses data provided by the U.S. Department of Education. The API endpoint is provided [here](https://collegescorecard.ed.gov/data/documentation/). Both cost of attendance and earning data is collected in 2018.
 
 ### API Key
-The file containing API Key is gitignored. If you want to run this project locally, you could get a key from [U.S. Department of Education](https://collegescorecard.ed.gov/data/documentation/). Then, create file src/APIs/ApiKeys.js and edit it to include:
+The file containing API Key is gitignored. If you want to run this project locally, you could get a key from [U.S. Department of Education](https://collegescorecard.ed.gov/data/documentation/). Then, create file `src/APIs/ApiKeys.js` and edit it to include:
 
 ```javascript
 
